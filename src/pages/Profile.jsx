@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Context, serverUrl } from '../main'
 import axios from 'axios';
 import Loader from '../components/Loader';
@@ -8,6 +8,10 @@ const Profile = () => {
     const {isAuthenticated, loading, user} = useContext(Context);
     // console.log(user);
     
+    useEffect({
+        
+    },[]);
+
     if(!isAuthenticated){
         return(
             <div>
