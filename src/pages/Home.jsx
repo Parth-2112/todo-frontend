@@ -44,7 +44,7 @@ const Home = () => {
   const updateHandler= async(id)=>{
     
     try{
-      const {data} = await axios.put(`${serverUrl}/task/${id}`,{
+      const {data} = await axios.put(`${serverUrl}/task/${id}`,{},{
         withCredentials : true
       });
 
