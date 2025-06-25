@@ -87,18 +87,21 @@ const Home = () => {
 
   if(!isAuthenticated){
     return(
-      <div>
+      <div className='text-xl text-slate-800 px-5 py-5'> 
         Login In to start adding task
       </div>
     );  
   }
   
   return (
-    <div className="container">
 
-      <div className='login'>
+    <div className='h-dvh mx-auto relative'>
+
+    <div className='w-[60%] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-[#212d40] py-12 px-12 text-white rounded-2xl'>
+
+      <div className='w-[100%]'>
         <section>
-          <form onSubmit={submitHandler}>
+          <form onSubmit={submitHandler} className='flex flex-col gap-6'>
           
             <input 
                 value={title}
@@ -106,6 +109,7 @@ const Home = () => {
                 placeholder='Title'
                 onChange={(e) => setTitle(e.target.value)}
                 required
+                className='text-xl px-2 py-2 outline-none'
             />
             
             <input 
@@ -114,16 +118,17 @@ const Home = () => {
                 placeholder='Description'
                 onChange={(e) => setDesc(e.target.value)}
                 required
+                className='text-xl px-2 py-2 outline-none'
             />
 
-            <button disabled={loading} type='submit'>
+            <button disabled={loading} type='submit' className='text-[#e28394] text-end text-xl hover:text-amber-100 cursor-pointer'>
               Add Task
             </button>                    
           </form>
         </section>
       </div>
 
-      <section className="todosContainer">
+      <section className="mt-20">
         {tasks.map((i)=>(
           <TaskItem 
             key={i._id}
@@ -137,6 +142,7 @@ const Home = () => {
         ))}
       </section>
     
+    </div>
     </div>
   )
 }

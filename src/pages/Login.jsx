@@ -44,30 +44,37 @@ const Login = () => {
     }
  
     return (
-        <div className='login'>
-            <section>
-                <form onSubmit={submitHandler}>
-                    <input 
-                        value={email}
-                        type="email" 
-                        placeholder='Email'
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                    />
+        <div className='h-dvh mx-auto relative'>
+        
+            <div className='w-[60%] absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-[#212d40] py-12 px-12 text-white rounded-2xl'>
+                
+                <section className='w-[100%]'>    
+                    <form onSubmit={submitHandler} className='flex flex-col gap-6'>        
+                        <input 
+                            value={email}
+                            type="email" 
+                            placeholder='Email'
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                            className='text-xl px-2 py-2 outline-none'
+                        />
 
-                    <input
-                        value={password} 
-                        type="password" 
-                        placeholder='Password' 
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                    
-                    <button disabled={loading} type='submit'>Login</button>
-                    <h4>Or</h4>
-                    <Link to={'/register'}>Sign Up</Link>
-                </form>
-            </section>
+                        <input
+                            value={password} 
+                            type="password" 
+                            placeholder='Password' 
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                            className='text-xl px-2 py-2 outline-none'
+                        />
+                        
+                        <button disabled={loading} type='submit' className='text-[#e28394] text-end text-xl hover:text-amber-100 cursor-pointer'>Login</button>
+                        <h4 className='text-xl font-bold'>Or</h4>
+                        <Link to={'/register'} className='text-xl text-end text-[#e28394] hover:text-amber-100'>Sign Up</Link>
+                    </form>
+
+                </section>
+            </div>
         </div>
   );
 }
